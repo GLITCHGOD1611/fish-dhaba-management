@@ -7,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './edit-user.scss',
 })
 export class EditUser {
+selectedFile!: File;
 
+onFileSelect(event: any) {
+
+  this.selectedFile = event.target.files[0];
+
+}
 }

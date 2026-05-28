@@ -1,0 +1,70 @@
+<form (ngSubmit)="addMenuItem()">
+
+    <input
+        type="text"
+        placeholder="Item Name"
+        [(ngModel)]="menu.name"
+        name="name"
+        required
+    >
+
+    <select
+        [(ngModel)]="menu.category"
+        name="category"
+        required
+    >
+
+        <option value="">Select Category</option>
+
+        <option value="Fish">Fish</option>
+
+        <option value="Chicken">Chicken</option>
+
+        <option value="Rice">Rice</option>
+
+        <option value="Roti">Roti</option>
+
+        <option value="Drinks">Drinks</option>
+
+        <option value="Starter">Starter</option>
+
+        <option value="veg">veg</option>
+
+    </select>
+
+    <input
+        type="number"
+        placeholder="Price"
+        [(ngModel)]="menu.price"
+        name="price"
+        required
+    >
+
+    <input
+        type="file"
+        (change)="onFileSelect($event)"
+    >
+
+    <label>
+
+        <input
+            type="checkbox"
+            [(ngModel)]="menu.available"
+            name="available"
+        >
+
+        Available
+
+    </label>
+
+    <button type="submit">
+        Add Menu Item
+    </button>
+      <button type="button" (click)="getMenuItems()">
+        Get Menu Items
+    </button>
+
+</form>
+{{ allMenuItems[0].name }}
+
+<img src="http://localhost:5000/uploads/{{ allMenuItems[0].image }}" alt="" class="img-thumbnail">

@@ -1,4 +1,119 @@
-<p>users works!</p>
+<div class="container-fluid" id="c">
+  
+<form class="row gy-3 gx-3 align-items-center">
+
+  <!-- Name -->
+  <div class="col-md-6">
+    <label for="name" class="form-label">Name</label>
+    <input 
+      type="text"
+      class="form-control"
+      id="name"
+      name="name"
+      placeholder="Enter name"
+      [(ngModel)]="userObj.name">
+  </div>
+
+  <!-- Email -->
+  <div class="col-md-6">
+    <label for="email" class="form-label">Email</label>
+    <input 
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="Enter email"
+      [(ngModel)]="userObj.email">
+  </div>
+
+  <!-- Password -->
+  <div class="col-md-6">
+    <label for="password" class="form-label">Password</label>
+    <input 
+      type="password"
+      class="form-control"
+      id="password"
+      name="password"
+      placeholder="Enter password"
+      [(ngModel)]="userObj.password">
+  </div>
+
+  <!-- Phone -->
+  <div class="col-md-6">
+    <label for="phone" class="form-label">Phone</label>
+    <input 
+      type="text"
+      class="form-control"
+      id="phone"
+      name="phone"
+      placeholder="Enter phone number"
+      [(ngModel)]="userObj.phone">
+  </div>
+
+  <!-- Role -->
+  <div class="col-md-6">
+    <label for="role" class="form-label">Role</label>
+
+    <select 
+      class="form-select"
+      id="role"
+      name="role"
+      [(ngModel)]="userObj.role">
+
+      <option selected disabled value="">
+        Select role
+      </option>
+
+      <option value="owner">
+        Owner
+      </option>
+
+      <option value="waiter">
+        Waiter
+      </option>
+
+    </select>
+  </div>
+
+  <!-- Active Status -->
+  <div class="col-md-6 d-flex align-items-center mt-4">
+
+    <div class="form-check">
+
+      <input 
+        class="form-check-input"
+        type="checkbox"
+        id="isActive"
+        name="isActive"
+        [(ngModel)]="userObj.isActive">
+
+      <label class="form-check-label" for="isActive">
+        Active User
+      </label>
+
+    </div>
+
+  </div>
+
+  <!-- Submit Button -->
+  <div class="col-12">
+
+    <button 
+      type="submit" 
+      class="btn btn-dark w-100"
+      (click)="createUser()">
+
+      Add User
+
+    </button>
+
+  </div>
+
+</form>
+
+
+</div>
+
 @for(user of users; track user._id)
 {
   <h1>{{user.name}}</h1>

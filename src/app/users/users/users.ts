@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-users',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './users.html',
   styleUrl: './users.scss',
 })
@@ -20,7 +21,7 @@ userObj = {
 }
 
 users:any[] = [];
-  getTable()
+  getUser()
   {
     this.http.get('http://localhost:5000/api/users/getAllUsers')
     .subscribe({
@@ -35,7 +36,20 @@ users:any[] = [];
     });
   }
 
+  createUser(){
+    this.http.post('http://localhost:5000/api/users/createUser', this.userObj)
+    .subscribe({
+      next: (res:any) => {
+        console.log(res);
+        this.getUser();
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
+  }
+
   constructor() {
-    this.getTable();
+    this.getUser();
   }
 }
