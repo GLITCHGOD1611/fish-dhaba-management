@@ -1,32 +1,13 @@
-
-
-<nav class="navbar navbar-expand-lg bg-primary bg-opacity-90">
+<nav class="navbar navbar-expand-lg ps-lg-5 " style="background-color: #002F6E;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " routerLink="/c1">c1</a>
-          
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/c2">c2</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/c3">c3</a>
-        </li>
-       
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-    </div>
+
+    <button class="btn ms-lg-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+      aria-controls="offcanvasScrolling"style="background-color: #002F6E; color: white;" ><i class="fa-solid fa-bars"></i></button>
+   
   </div>
 </nav>
+
+
+<app-sidebar></app-sidebar>
+
 <router-outlet />
